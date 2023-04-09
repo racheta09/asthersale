@@ -765,27 +765,24 @@ contract AstherSale is Context, ReentrancyGuard, Ownable {
     uint256 private _rate;
     uint256 private _tokensSold;
     bool private _end;
-    // AggregatorV3Interface BUSDBNB =
-    //     AggregatorV3Interface(0x87Ea38c9F24264Ec1Fff41B04ec94a97Caf99941);
-    // IERC20 BUSD = IERC20(0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56);
-    // IERC20 USDT = IERC20(0x55d398326f99059fF775485246999027B3197955);
+    AggregatorV3Interface BUSDBNB =
+        AggregatorV3Interface(0x87Ea38c9F24264Ec1Fff41B04ec94a97Caf99941);
+    IERC20 BUSD = IERC20(0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56);
+    IERC20 USDT = IERC20(0x55d398326f99059fF775485246999027B3197955);
 
-    AggregatorV3Interface BUSDBNB = AggregatorV3Interface(
-        0x0630521aC362bc7A19a4eE44b57cE72Ea34AD01c
-    ); // Testnet
-    IERC20 BUSD = IERC20(0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee); // Testnet
-    IERC20 USDT = IERC20(0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee); // Testnet
+    // AggregatorV3Interface BUSDBNB = AggregatorV3Interface(
+    //     0x0630521aC362bc7A19a4eE44b57cE72Ea34AD01c
+    // ); // Testnet
+    // IERC20 BUSD = IERC20(0xea9579a69EbD08217926B364E8c8de513FDf8E23); // Testnet
+    // IERC20 USDT = IERC20(0xea9579a69EbD08217926B364E8c8de513FDf8E23); // Testnet
 
     event TokensPurchased(address indexed beneficiary, uint256 tokenAmount);
     event RateChanged(uint256 rate);
 
-    constructor(uint256 rate_, address payable wallet_, IERC20 token_) {
-        require(rate_ > 0, "Rate is 0");
-        require(wallet_ != address(0), "Wallet is the zero address");
-        require(address(token_) != address(0), "Token is the zero address");
-        _rate = rate_;
-        _wallet = wallet_;
-        _token = token_;
+    constructor() {
+        _rate = 5;
+        _wallet = payable(0xEE965123a46c66E00dD2fa5DCA004Bfb3e5154A1);
+        _token = IERC20(0x1bffaFdf98f9266afef906385fB2A44Bc3dCAdc9);
         _end = false;
     }
 
