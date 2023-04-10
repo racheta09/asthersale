@@ -14,10 +14,10 @@ export default function PrivateSale({
     saleContractAddress,
     address,
 }: PrivateSaleProps) {
-    // const busdAddress = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
-    // const usdtAddress = "0x55d398326f99059fF775485246999027B3197955"
-    const busdAddress = "0xea9579a69EbD08217926B364E8c8de513FDf8E23" //Testnet
-    const usdtAddress = "0xea9579a69EbD08217926B364E8c8de513FDf8E23" //Testnet
+    const busdAddress = "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56"
+    const usdtAddress = "0x55d398326f99059fF775485246999027B3197955"
+    // const busdAddress = "0xea9579a69EbD08217926B364E8c8de513FDf8E23" //Testnet
+    // const usdtAddress = "0xea9579a69EbD08217926B364E8c8de513FDf8E23" //Testnet
     const { data: busdContract } = useContract(busdAddress, "token")
     const { data: usdtContract } = useContract(usdtAddress, "token")
     const { data: saleContract } = useContract(saleContractAddress)
@@ -52,7 +52,7 @@ export default function PrivateSale({
             <h4 className="text-xl text-center m-2 p-2">
                 Asther Rate: ${parseInt(rate) / 100}
             </h4>
-            <div className="flex justify-around gap-2">
+            <div className="flex flex-wrap align-middle justify-center gap-2">
                 <div className="flex flex-col">
                     <Image src="/bnb.png" width="200" height="200" alt="bnb" />
                     <p>

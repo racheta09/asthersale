@@ -855,7 +855,7 @@ contract AstherSale is Context, ReentrancyGuard, Ownable {
     }
 
     function _getTokenAmount(uint256 amount) internal view returns (uint256) {
-        return amount.div(_rate).mul(100);
+        return amount.div(_rate).mul(100).div(10 ** 9);
     }
 
     function forwardBNB() public {
