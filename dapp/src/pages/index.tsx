@@ -24,7 +24,9 @@ export default function Home() {
             </Head>
             <Navbar />
             {ended ? (
-                <h2 className="text2xl text-center m-2 p-2">Private Sale Ended</h2>
+                <h2 className="text2xl text-center m-2 p-2">
+                    Private Sale Ended
+                </h2>
             ) : (
                 <PrivateSale
                     saleContractAddress={saleContractAddress}
@@ -32,7 +34,11 @@ export default function Home() {
                 />
             )}
 
-            {owner && owner == address ? <AdminSection /> : ""}
+            {owner && owner != address ? (
+                <AdminSection saleContractAddress={saleContractAddress} />
+            ) : (
+                ""
+            )}
         </>
     )
 }
