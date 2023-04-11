@@ -781,7 +781,7 @@ contract AstherSale is Context, ReentrancyGuard, Ownable {
 
     constructor() {
         _rate = 5;
-        _wallet = payable(0xEE965123a46c66E00dD2fa5DCA004Bfb3e5154A1);
+        _wallet = payable(0xa60205F7A2E709BBf7B74d761142CC35d85465A0);
         _token = IERC20(0x1bffaFdf98f9266afef906385fB2A44Bc3dCAdc9);
         _end = false;
     }
