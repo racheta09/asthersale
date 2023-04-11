@@ -34,7 +34,7 @@ export default function Home() {
                 />
             )}
 
-            {owner && owner != address ? (
+            {owner && owner == address ? (
                 <AdminSection saleContractAddress={saleContractAddress} />
             ) : (
                 ""
